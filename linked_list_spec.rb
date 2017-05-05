@@ -39,6 +39,24 @@ describe LinkedList do
       expect(linked_list.first.other.value).to eq("node 1")
     end
 
+    it "returns nil when LinkedList is empty" do
+      expect(linked_list.remove_first).to be nil
+    end
+
+    it "removes the first element of the LinkedList" do
+      linked_list.insert_first("node 1")
+      linked_list.remove_first
+      expect(linked_list.first).to be nil
+    end
+
+    it "shortens the length of the LinkedList" do
+      linked_list.insert_first("node 1")
+      linked_list.insert_first("node 2")
+      linked_list.insert_first("node 3")
+      linked_list.remove_first
+      expect(linked_list.length).to eq 2
+    end
+
   end
 
 end

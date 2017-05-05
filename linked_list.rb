@@ -26,6 +26,12 @@ class LinkedList
   end
 
   def remove_first
+    if @first
+      @first = @first.other
+      @size -= 1
+    else
+      nil
+    end
   end
 
   def insert_last(element)
